@@ -16,45 +16,45 @@
 	/* Helper functions
 	------------------------------------------------------------------------------------------ */
 	// Setup GET parameters
-	function goodTube_helper_setupGetParams() {
-		let getParams = {};
+	// function goodTube_helper_setupGetParams() {
+	// 	let getParams = {};
 
-		document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
-			function decode(s) {
-				return decodeURIComponent(s.split("+").join(" "));
-			}
+	// 	document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
+	// 		function decode(s) {
+	// 			return decodeURIComponent(s.split("+").join(" "));
+	// 		}
 
-			getParams[decode(arguments[1])] = decode(arguments[2]);
-		});
+	// 		getParams[decode(arguments[1])] = decode(arguments[2]);
+	// 	});
 
-		return getParams;
-	}
+	// 	return getParams;
+	// }
 
-	// Set a cookie
-	function goodTube_helper_setCookie(name, value) {
-		// 399 days
-		document.cookie = name + "=" + encodeURIComponent(value) + ";max-age=" + (399 * 24 * 60 * 60);
-	}
+	// // Set a cookie
+	// function goodTube_helper_setCookie(name, value) {
+	// 	// 399 days
+	// 	document.cookie = name + "=" + encodeURIComponent(value) + ";max-age=" + (399 * 24 * 60 * 60);
+	// }
 
 	// Get a cookie
-	function goodTube_helper_getCookie(name) {
-		// Split the cookie string and get all individual name=value pairs in an array
-		let cookies = document.cookie.split(";");
+	// function goodTube_helper_getCookie(name) {
+	// 	// Split the cookie string and get all individual name=value pairs in an array
+	// 	let cookies = document.cookie.split(";");
 
-		// Loop through the array elements
-		for (let i = 0; i < cookies.length; i++) {
-			let cookie = cookies[i].split("=");
+	// 	// Loop through the array elements
+	// 	for (let i = 0; i < cookies.length; i++) {
+	// 		let cookie = cookies[i].split("=");
 
-			// Removing whitespace at the beginning of the cookie name and compare it with the given string
-			if (name == cookie[0].trim()) {
-				// Decode the cookie value and return
-				return decodeURIComponent(cookie[1]);
-			}
-		}
+	// 		// Removing whitespace at the beginning of the cookie name and compare it with the given string
+	// 		if (name == cookie[0].trim()) {
+	// 			// Decode the cookie value and return
+	// 			return decodeURIComponent(cookie[1]);
+	// 		}
+	// 	}
 
-		// Return null if not found
-		return null;
-	}
+	// 	// Return null if not found
+	// 	return null;
+	// }
 
 	// Add CSS classes to show or hide elements / the Youtube player
 	function goodTube_helper_showHide_init() {
@@ -893,21 +893,21 @@
 	// It's only in here so I can have some fun and see how many people use this thing I made - no private info is tracked.
 
 	// Count unique users
-	function goodTube_stats_user() {
-		// If there's no cookie
-		if (!goodTube_helper_getCookie('goodTube_uniqueUserStat')) {
-			// Count a unique user
-			fetch('\x68\x74\x74\x70\x73\x3a\x2f\x2f\x6a\x61\x6d\x65\x6e\x6c\x79\x6e\x64\x6f\x6e\x2e\x63\x6f\x6d\x2f\x5f\x6f\x74\x68\x65\x72\x2f\x73\x74\x61\x74\x73\x2f\x75\x73\x65\x72\x2e\x70\x68\x70');
+	// function goodTube_stats_user() {
+	// 	// If there's no cookie
+	// 	if (!goodTube_helper_getCookie('goodTube_uniqueUserStat')) {
+	// 		// Count a unique user
+	// 		fetch('\x68\x74\x74\x70\x73\x3a\x2f\x2f\x6a\x61\x6d\x65\x6e\x6c\x79\x6e\x64\x6f\x6e\x2e\x63\x6f\x6d\x2f\x5f\x6f\x74\x68\x65\x72\x2f\x73\x74\x61\x74\x73\x2f\x75\x73\x65\x72\x2e\x70\x68\x70');
 
-			// Set a cookie to only count unique users once
-			goodTube_helper_setCookie('goodTube_uniqueUserStat', 'true');
-		}
-	}
+	// 		// Set a cookie to only count unique users once
+	// 		goodTube_helper_setCookie('goodTube_uniqueUserStat', 'true');
+	// 	}
+	// }
 
-	// Count videos
-	function goodTube_stats_video() {
-		fetch('\x68\x74\x74\x70\x73\x3a\x2f\x2f\x6a\x61\x6d\x65\x6e\x6c\x79\x6e\x64\x6f\x6e\x2e\x63\x6f\x6d\x2f\x5f\x6f\x74\x68\x65\x72\x2f\x73\x74\x61\x74\x73\x2f\x76\x69\x64\x65\x6f\x2e\x70\x68\x70');
-	}
+	// // Count videos
+	// function goodTube_stats_video() {
+	// 	fetch('\x68\x74\x74\x70\x73\x3a\x2f\x2f\x6a\x61\x6d\x65\x6e\x6c\x79\x6e\x64\x6f\x6e\x2e\x63\x6f\x6d\x2f\x5f\x6f\x74\x68\x65\x72\x2f\x73\x74\x61\x74\x73\x2f\x76\x69\x64\x65\x6f\x2e\x70\x68\x70');
+	// }
 
 
 	/* Core functions
@@ -1155,88 +1155,88 @@
 		}
 
 		// Add content to the menu container
-		menuContainer.innerHTML = `
-			<!-- Menu Button
-			==================================================================================================== -->
-			<a href='javascript:;' class='goodTube_menuButton'>
-				<img src='\x68\x74\x74\x70\x73\x3a\x2f\x2f\x6a\x61\x6d\x65\x6e\x6c\x79\x6e\x64\x6f\x6e\x2e\x63\x6f\x6d\x2f\x5f\x6f\x74\x68\x65\x72\x2f\x73\x74\x61\x74\x73\x2f\x63\x72\x61\x62\x2e\x70\x6e\x67'>
-			</a> <!-- .goodTube_menuButton -->
-			<a href='javascript:;' class='goodTube_menuClose'>&#10006;</a>
+		// menuContainer.innerHTML = `
+		// 	<!-- Menu Button
+		// 	==================================================================================================== -->
+		// 	<a href='javascript:;' class='goodTube_menuButton'>
+		// 		<img src='\x68\x74\x74\x70\x73\x3a\x2f\x2f\x6a\x61\x6d\x65\x6e\x6c\x79\x6e\x64\x6f\x6e\x2e\x63\x6f\x6d\x2f\x5f\x6f\x74\x68\x65\x72\x2f\x73\x74\x61\x74\x73\x2f\x63\x72\x61\x62\x2e\x70\x6e\x67'>
+		// 	</a> <!-- .goodTube_menuButton -->
+		// 	<a href='javascript:;' class='goodTube_menuClose'>&#10006;</a>
 
 
-			<!-- Modal
-			==================================================================================================== -->
-			<div class='goodTube_modal'>
-				<div class='goodTube_modal_overlay'></div>
+		// 	<!-- Modal
+		// 	==================================================================================================== -->
+		// 	<div class='goodTube_modal'>
+		// 		<div class='goodTube_modal_overlay'></div>
 
-				<div class='goodTube_modal_inner'>
-					<a class='goodTube_modal_closeButton' href='javascript:;'>&#10006;</a>
+		// 		<div class='goodTube_modal_inner'>
+		// 			<a class='goodTube_modal_closeButton' href='javascript:;'>&#10006;</a>
 
-					<div class='goodTube_title'>Settings</div>
-					<div class='goodTube_content'>
-						<div class='goodTube_setting'>
-							<input type='checkbox' class='goodTube_option_shorts' name='goodTube_option_shorts' id='goodTube_option_shorts'`+ shortsEnabled + `>
-							<label for='goodTube_option_shorts'>Remove all Shorts from Youtube</label>
-						</div> <!-- .goodTube_setting -->
-						<button class='goodTube_button' id='goodTube_button_saveSettings'>Save and refresh</button>
-					</div> <!-- .goodTube_content -->
-
-
-					<div class='goodTube_title'>Make a donation <span class='goodTube_heart'>&#9829;</span></div>
-					<div class='goodTube_content'>
-						<div class='goodTube_donation'>
-							<div class='goodTube_text'>
-								<strong>This adblocker is 100% free to use and always will be.<br>
-								It has helped thousands of people like you remove the unbearable ads from Youtube.</strong><br>
-								<br>
-								Countless hours and late nights have gone into making this and I continue to work on updating and maintaing the project every day. I am dedicated to ensuring this solution continues to work for everyone (despite Youtube's best efforts to stop adblockers).<br>
-								<br>
-								Any donation, no matter how small, helps to keep this project going and supports the community who use it. If you would like to say "thank you" and give something back, I would really appreciate it.
-								<!--
-								<br>
-								<br>
-								<i>Please note: All donations are processed through Paypal to provide you with the highest level of security.<br>
-								You don't need a Paypal account to make a donation, it's just processed through their platform.</i>
-								-->
-							</div>
-							<a href='https://tiptopjar.com/goodtube' target='_blank' rel='nofollow' class='goodTube_button'>Donate now</a>
-						</div> <!-- .goodTube_donation -->
-					</div> <!-- .goodTube_content -->
+		// 			<div class='goodTube_title'>Settings</div>
+		// 			<div class='goodTube_content'>
+		// 				<div class='goodTube_setting'>
+		// 					<input type='checkbox' class='goodTube_option_shorts' name='goodTube_option_shorts' id='goodTube_option_shorts'`+ shortsEnabled + `>
+		// 					<label for='goodTube_option_shorts'>Remove all Shorts from Youtube</label>
+		// 				</div> <!-- .goodTube_setting -->
+		// 				<button class='goodTube_button' id='goodTube_button_saveSettings'>Save and refresh</button>
+		// 			</div> <!-- .goodTube_content -->
 
 
-					<div class='goodTube_title'>FAQs</div>
-					<div class='goodTube_content'>
-						<div class='goodTube_text'>
-							<strong>Do I need to manually update this?</strong><br>
-							Nope, updates are pushed to you automatically so you don't have to do anything to use the latest version.<br>
-							<br>
-							<strong>Playlists skip to the next video every few seconds</strong><br>
-							This is usually caused by another adblocker, userscript or extension you have installed. To fix this problem, disable all of your other adblockers, extensions and userscripts. Leave only Tampermonkey and this userscript enabled. Then refresh Youtube and check if the problem is fixed. If it's now working, turn on your other extensions and userscripts one by one until you find the one causing the issue.<br>
-							<br>
-							<strong>I can't watch a specific video</strong><br>
-							This will work for 99% of videos. However it won't work for videos which are age restricted or have embedding disabled. You'll see a message come up if this happens. If you want to watch one of these, you'll have to disable this for a second. Sorry all, but there's no way around it currently with this alternative method of adblocking.<br>
-							<br>
-							<strong>I can't use the miniplayer</strong><br>
-							The Youtube miniplayer is not supported. Instead this uses "Picture in Picture" mode, which works in most browsers / is the new standard for the web. Unfortunately Firefox does not support the Picture in Picture API, so the button is removed in Firefox until they decide to include this feature.
-						</div>
-					</div> <!-- .goodTube_content -->
+		// 			<div class='goodTube_title'>Make a donation <span class='goodTube_heart'>&#9829;</span></div>
+		// 			<div class='goodTube_content'>
+		// 				<div class='goodTube_donation'>
+		// 					<div class='goodTube_text'>
+		// 						<strong>This adblocker is 100% free to use and always will be.<br>
+		// 						It has helped thousands of people like you remove the unbearable ads from Youtube.</strong><br>
+		// 						<br>
+		// 						Countless hours and late nights have gone into making this and I continue to work on updating and maintaing the project every day. I am dedicated to ensuring this solution continues to work for everyone (despite Youtube's best efforts to stop adblockers).<br>
+		// 						<br>
+		// 						Any donation, no matter how small, helps to keep this project going and supports the community who use it. If you would like to say "thank you" and give something back, I would really appreciate it.
+		// 						<!--
+		// 						<br>
+		// 						<br>
+		// 						<i>Please note: All donations are processed through Paypal to provide you with the highest level of security.<br>
+		// 						You don't need a Paypal account to make a donation, it's just processed through their platform.</i>
+		// 						-->
+		// 					</div>
+		// 					<a href='https://tiptopjar.com/goodtube' target='_blank' rel='nofollow' class='goodTube_button'>Donate now</a>
+		// 				</div> <!-- .goodTube_donation -->
+		// 			</div> <!-- .goodTube_content -->
 
 
-					<div class='goodTube_title'>Report an issue</div>
-					<div class='goodTube_content'>
-						<div class='goodTube_text goodTube_successText'>Your message has been sent successfully.</div>
-						<form class='goodTube_report' onSubmit='javascript:;'>
-							<div class='goodTube_text'>I am dedicated to helping every single person get this working. Everyone is important and if you have any problems at all, please let me know. I will respond and do my best to help!</div>
-							<input class='goodTube_reportEmail' type='email' placeholder='Email address' required>
-							<textarea class='goodTube_reportText' placeholder='Enter your message here' required></textarea>
-							<input type='submit' class='goodTube_button' id='goodTube_button_submitReport' value='Submit'>
-						</form> <!-- .goodTube_report -->
-					</div> <!-- .goodTube_content -->
+		// 			<div class='goodTube_title'>FAQs</div>
+		// 			<div class='goodTube_content'>
+		// 				<div class='goodTube_text'>
+		// 					<strong>Do I need to manually update this?</strong><br>
+		// 					Nope, updates are pushed to you automatically so you don't have to do anything to use the latest version.<br>
+		// 					<br>
+		// 					<strong>Playlists skip to the next video every few seconds</strong><br>
+		// 					This is usually caused by another adblocker, userscript or extension you have installed. To fix this problem, disable all of your other adblockers, extensions and userscripts. Leave only Tampermonkey and this userscript enabled. Then refresh Youtube and check if the problem is fixed. If it's now working, turn on your other extensions and userscripts one by one until you find the one causing the issue.<br>
+		// 					<br>
+		// 					<strong>I can't watch a specific video</strong><br>
+		// 					This will work for 99% of videos. However it won't work for videos which are age restricted or have embedding disabled. You'll see a message come up if this happens. If you want to watch one of these, you'll have to disable this for a second. Sorry all, but there's no way around it currently with this alternative method of adblocking.<br>
+		// 					<br>
+		// 					<strong>I can't use the miniplayer</strong><br>
+		// 					The Youtube miniplayer is not supported. Instead this uses "Picture in Picture" mode, which works in most browsers / is the new standard for the web. Unfortunately Firefox does not support the Picture in Picture API, so the button is removed in Firefox until they decide to include this feature.
+		// 				</div>
+		// 			</div> <!-- .goodTube_content -->
 
 
-				</div> <!-- .goodTube_modal_inner -->
-			</div> <!-- .goodTube_modal -->
-		`;
+		// 			<div class='goodTube_title'>Report an issue</div>
+		// 			<div class='goodTube_content'>
+		// 				<div class='goodTube_text goodTube_successText'>Your message has been sent successfully.</div>
+		// 				<form class='goodTube_report' onSubmit='javascript:;'>
+		// 					<div class='goodTube_text'>I am dedicated to helping every single person get this working. Everyone is important and if you have any problems at all, please let me know. I will respond and do my best to help!</div>
+		// 					<input class='goodTube_reportEmail' type='email' placeholder='Email address' required>
+		// 					<textarea class='goodTube_reportText' placeholder='Enter your message here' required></textarea>
+		// 					<input type='submit' class='goodTube_button' id='goodTube_button_submitReport' value='Submit'>
+		// 				</form> <!-- .goodTube_report -->
+		// 			</div> <!-- .goodTube_content -->
+
+
+		// 		</div> <!-- .goodTube_modal_inner -->
+		// 	</div> <!-- .goodTube_modal -->
+		// `;
 
 		// Style the menu
 		let style = document.createElement('style');
