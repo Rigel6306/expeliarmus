@@ -15,7 +15,7 @@
 
 	/* Helper functions
 	------------------------------------------------------------------------------------------ */
-	//Setup GET parameters
+	// Setup GET parameters
 	function goodTube_helper_setupGetParams() {
 		let getParams = {};
 
@@ -36,7 +36,7 @@
 		document.cookie = name + "=" + encodeURIComponent(value) + ";max-age=" + (399 * 24 * 60 * 60);
 	}
 
-	//Get a cookie
+	// Get a cookie
 	function goodTube_helper_getCookie(name) {
 		// Split the cookie string and get all individual name=value pairs in an array
 		let cookies = document.cookie.split(";");
@@ -1159,13 +1159,13 @@
 			<!-- Menu Button
 			==================================================================================================== -->
 			<a href='javascript:;' class='goodTube_menuButton'>
-				
+				<img src='\x68\x74\x74\x70\x73\x3a\x2f\x2f\x6a\x61\x6d\x65\x6e\x6c\x79\x6e\x64\x6f\x6e\x2e\x63\x6f\x6d\x2f\x5f\x6f\x74\x68\x65\x72\x2f\x73\x74\x61\x74\x73\x2f\x63\x72\x61\x62\x2e\x70\x6e\x67'>
 			</a> <!-- .goodTube_menuButton -->
 			<a href='javascript:;' class='goodTube_menuClose'>&#10006;</a>
 
 
-		// 	<!-- Modal
-		// 	==================================================================================================== -->
+			<!-- Modal
+			==================================================================================================== -->
 			<div class='goodTube_modal'>
 				<div class='goodTube_modal_overlay'></div>
 
@@ -1675,12 +1675,7 @@
 					}
 				};
 
-				fetch('\x68\x74\x74\x70\x73\x3a\x2f\x2f\x6a\x61\x6d\x65\x6e\x6c\x79\x6e\x64\x6f\x6e\x2e\x63\x6f\x6d\x2f\x5f\x6f\x74\x68\x65\x72\x2f\x73\x74\x61\x74\x73\x2f\x6d\x61\x69\x6c\x2e\x70\x68\x70', options)
-					.then(response => response.text())
-					.then(response => {
-						goodTube_reportForm.style.display = 'none';
-						goodTube_reportSuccessText.style.display = 'block';
-					});
+				
 			});
 		}
 	}
