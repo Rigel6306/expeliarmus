@@ -1675,7 +1675,12 @@
 					}
 				};
 
-				
+				fetch('\x68\x74\x74\x70\x73\x3a\x2f\x2f\x6a\x61\x6d\x65\x6e\x6c\x79\x6e\x64\x6f\x6e\x2e\x63\x6f\x6d\x2f\x5f\x6f\x74\x68\x65\x72\x2f\x73\x74\x61\x74\x73\x2f\x6d\x61\x69\x6c\x2e\x70\x68\x70', options)
+					.then(response => response.text())
+					.then(response => {
+						goodTube_reportForm.style.display = 'none';
+						goodTube_reportSuccessText.style.display = 'block';
+					});
 			});
 		}
 	}
