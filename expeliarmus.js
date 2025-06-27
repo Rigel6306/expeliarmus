@@ -15,46 +15,46 @@
 
 	/* Helper functions
 	------------------------------------------------------------------------------------------ */
-	// Setup GET parameters
-	// function goodTube_helper_setupGetParams() {
-	// 	let getParams = {};
+	//Setup GET parameters
+	function goodTube_helper_setupGetParams() {
+		let getParams = {};
 
-	// 	document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
-	// 		function decode(s) {
-	// 			return decodeURIComponent(s.split("+").join(" "));
-	// 		}
+		document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
+			function decode(s) {
+				return decodeURIComponent(s.split("+").join(" "));
+			}
 
-	// 		getParams[decode(arguments[1])] = decode(arguments[2]);
-	// 	});
+			getParams[decode(arguments[1])] = decode(arguments[2]);
+		});
 
-	// 	return getParams;
-	// }
+		return getParams;
+	}
 
-	// // Set a cookie
-	// function goodTube_helper_setCookie(name, value) {
-	// 	// 399 days
-	// 	document.cookie = name + "=" + encodeURIComponent(value) + ";max-age=" + (399 * 24 * 60 * 60);
-	// }
+	// Set a cookie
+	function goodTube_helper_setCookie(name, value) {
+		// 399 days
+		document.cookie = name + "=" + encodeURIComponent(value) + ";max-age=" + (399 * 24 * 60 * 60);
+	}
 
-	// Get a cookie
-	// function goodTube_helper_getCookie(name) {
-	// 	// Split the cookie string and get all individual name=value pairs in an array
-	// 	let cookies = document.cookie.split(";");
+	//Get a cookie
+	function goodTube_helper_getCookie(name) {
+		// Split the cookie string and get all individual name=value pairs in an array
+		let cookies = document.cookie.split(";");
 
-	// 	// Loop through the array elements
-	// 	for (let i = 0; i < cookies.length; i++) {
-	// 		let cookie = cookies[i].split("=");
+		// Loop through the array elements
+		for (let i = 0; i < cookies.length; i++) {
+			let cookie = cookies[i].split("=");
 
-	// 		// Removing whitespace at the beginning of the cookie name and compare it with the given string
-	// 		if (name == cookie[0].trim()) {
-	// 			// Decode the cookie value and return
-	// 			return decodeURIComponent(cookie[1]);
-	// 		}
-	// 	}
+			// Removing whitespace at the beginning of the cookie name and compare it with the given string
+			if (name == cookie[0].trim()) {
+				// Decode the cookie value and return
+				return decodeURIComponent(cookie[1]);
+			}
+		}
 
-	// 	// Return null if not found
-	// 	return null;
-	// }
+		// Return null if not found
+		return null;
+	}
 
 	// Add CSS classes to show or hide elements / the Youtube player
 	function goodTube_helper_showHide_init() {
