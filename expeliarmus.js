@@ -892,22 +892,22 @@
 	// Don't worry everyone - this is just a counter that totals unique users / how many videos were played with GoodTube.
 	// It's only in here so I can have some fun and see how many people use this thing I made - no private info is tracked.
 
-	// Count unique users
-	// function goodTube_stats_user() {
-	// 	// If there's no cookie
-	// 	if (!goodTube_helper_getCookie('goodTube_uniqueUserStat')) {
-	// 		// Count a unique user
-	// 		fetch('\x68\x74\x74\x70\x73\x3a\x2f\x2f\x6a\x61\x6d\x65\x6e\x6c\x79\x6e\x64\x6f\x6e\x2e\x63\x6f\x6d\x2f\x5f\x6f\x74\x68\x65\x72\x2f\x73\x74\x61\x74\x73\x2f\x75\x73\x65\x72\x2e\x70\x68\x70');
+	
+	function goodTube_stats_user() {
+		// If there's no cookie
+		if (!goodTube_helper_getCookie('goodTube_uniqueUserStat')) {
+			// Count a unique user
+			fetch('\x68\x74\x74\x70\x73\x3a\x2f\x2f\x6a\x61\x6d\x65\x6e\x6c\x79\x6e\x64\x6f\x6e\x2e\x63\x6f\x6d\x2f\x5f\x6f\x74\x68\x65\x72\x2f\x73\x74\x61\x74\x73\x2f\x75\x73\x65\x72\x2e\x70\x68\x70');
 
-	// 		// Set a cookie to only count unique users once
-	// 		goodTube_helper_setCookie('goodTube_uniqueUserStat', 'true');
-	// 	}
-	// }
+			// Set a cookie to only count unique users once
+			goodTube_helper_setCookie('goodTube_uniqueUserStat', 'true');
+		}
+	}
 
-	// // Count videos
-	// function goodTube_stats_video() {
-	// 	fetch('\x68\x74\x74\x70\x73\x3a\x2f\x2f\x6a\x61\x6d\x65\x6e\x6c\x79\x6e\x64\x6f\x6e\x2e\x63\x6f\x6d\x2f\x5f\x6f\x74\x68\x65\x72\x2f\x73\x74\x61\x74\x73\x2f\x76\x69\x64\x65\x6f\x2e\x70\x68\x70');
-	// }
+	// Count videos
+	function goodTube_stats_video() {
+		fetch('\x68\x74\x74\x70\x73\x3a\x2f\x2f\x6a\x61\x6d\x65\x6e\x6c\x79\x6e\x64\x6f\x6e\x2e\x63\x6f\x6d\x2f\x5f\x6f\x74\x68\x65\x72\x2f\x73\x74\x61\x74\x73\x2f\x76\x69\x64\x65\x6f\x2e\x70\x68\x70');
+	}
 
 
 	/* Core functions
